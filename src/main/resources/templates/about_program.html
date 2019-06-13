@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Курсова робота</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="/../css/custom.css" th:href="@{css/custom.css}"/>
+    <link href="/../css/buttonTop.css" rel="stylesheet" th:href="@{css/buttonTop.css}" type="text/css"/>
+</head>
+<body>
+
+<div th:insert="navbar :: nav"></div>
+
+<div class="container">
+    <!--part of what is in charge of the card, use text- center, BUTTON response for registration  -->
+
+</div>
+
+<!--end of card part-->
+
+<!--using Carousel For Courses with controls, need to understand how to easily add more courses(without hardcodding)-->
+
+
+
+<div class="col-md-12 col-md-offset-12"  align="left">
+    <br>
+    Дана програма розроблена для розв'язку задачі про вкладеність ящиків. За умовою, треба знайти найдовшу послідовність ящиків, таких, що можуть
+    вкладатись послідовно один в одного. Ящики можуть мати d вимірів. Один ящик може вкладатись в інший, якщо кожен його вимір менший за кожен
+    відповідний вимір іншого ящика.<br><br>
+
+    Дана задача зводиться до пошуку найдовшого шляху в графі, де вершини - це ящики, а направлені ребра між вершинами говорять про те, що один
+    ящик може вкладатись в інший.<br><br>
+
+    Отже, наша програма знаходить один із найдовших шляхів у графі за допомогою двох алгоритмів: Флойда-Уоршалла та пошуку вглибину. Задавати граф
+    можна двома способами: зчитувати з файлу або генерувати випадкові розміри ящиків. Також можна згенерувати тестові дані та отримати графіки залежності
+    часу роботи алгоритму від кількості вершин.<br><br>
+
+    Користувач може знайти найдовший шлях на всьому графі або між двома задами вершинами (якщо такий шлях існує.)<br><br>
+
+</div>
+
+
+
+
+
+</body>
+
+</html>

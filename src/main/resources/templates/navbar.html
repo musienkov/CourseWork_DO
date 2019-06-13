@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Training Center Home</title>
+    <link rel="stylesheet" href="/../css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" href="/../css/bootstrap-grid.css" th:href="@{/css/bootstrap-grid.css}" />
+    <link rel="stylesheet" href="/../css/bootstrap-reboot.css" th:href="@{/css/bootstrap-reboot.css}" />
+    <link type="text/css" rel="stylesheet" href="/../css/custom.css" th:href="@{css/custom.css}"/>
+    <style>
+
+    </style>
+</head>
+<body>
+<div th:fragment="nav">
+    <nav class="navbar navbar-expand-xl navbar-dark  bg-primary">
+        <a class="navbar-brand" href="/">Training Portal</a>
+        <button aria-controls="#mynavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-target="#mynavbar" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link " href="/admin" >ADMIN</a>
+                </li>
+
+
+            </ul>
+            <ul class="right navbar-nav">
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container hide">
+        <nav class="navbar navbar-expand-xl navbar-dark fixed-top bg-primary">
+            <a class="navbar-brand" href="/">Головна</a>
+            <button aria-controls="#mynavbarinv" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-target="#mynavbarinv" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbarinv">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item active">
+                        <a class="nav-link " href="/about_program" >Про програму</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link " href="/input_data" >Розпочати</a>
+                    </li>
+
+
+
+                    <li class="nav-item active" >
+                        <a class="nav-link" href="/test" >Аналіз алгоритмів</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+    </nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Курсова робота</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="/../css/custom.css" th:href="@{css/custom.css}"/>
+    <link href="/../css/buttonTop.css" rel="stylesheet" th:href="@{css/buttonTop.css}" type="text/css"/>
+</head>
+<body>
+
+<div th:insert="navbar :: nav"></div>
+
+<div class="container">
+    <!--part of what is in charge of the card, use text- center, BUTTON response for registration  -->
+
+</div>
+
+<!--end of card part-->
+
+<!--using Carousel For Courses with controls, need to understand how to easily add more courses(without hardcodding)-->
+
+
+
+
+<h2 class="text-center">Створення графа</h2>
+
+<div class="row justify-content-center" >
+
+<div class="col-md-3 col-md-offset-3"  align="center">
+    <form action="#" method="post" th:action="@{get-parameters}" >
+
+        <div th:if="${notAllowedNumberMessage}"
+             class="alert alert-danger" role="alert"
+             th:text="${notAllowedNumberMessage}">
+        </div>
+
+        <div th:if="${minNumberMessage}"
+             class="alert alert-danger" role="alert"
+             th:text="${minNumberMessage}">
+        </div>
+
+        <div th:if="${maxNumberMessage}"
+             class="alert alert-danger" role="alert"
+             th:text="${maxNumberMessage}">
+        </div>
+
+        <div th:if="${maxDimensionMessage}"
+             class="alert alert-danger" role="alert"
+             th:text="${maxDimensionMessage}">
+        </div>
+
+        <div th:if="${minDimensionMessage}"
+             class="alert alert-danger" role="alert"
+             th:text="${minDimensionMessage}">
+        </div>
+
+    <label>Кількість вершин (в діапазоні [2; 50])</label>
+    <input class="form-control" required placeholder="кількість ящиків"  type="number" name = "n"/>
+
+    <label>Кількість вимірів (в діапазоні [1; 10])</label>
+    <input class="form-control" required placeholder="кількість вимірів"  type="number" name = "d"/>
+
+
+    <input class="btn btn-success" type="submit" value="Згенерувати"/>
+        <hr>
+            <label>Або</label>
+        <hr>
+    </form>
+    <form action="#" method="post" th:action="@{read-from-file}" >
+    <input class="btn btn-primary" align="center"  type="submit" value="Зчитати з файла"/>
+    </form>
+</div>
+</div>
+
+
+
+
+
+</body>
+
+</html>

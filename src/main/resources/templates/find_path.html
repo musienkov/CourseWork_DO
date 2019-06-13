@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Курсова робота</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="/../css/custom.css" th:href="@{css/custom.css}"/>
+    <link href="/../css/buttonTop.css" rel="stylesheet" th:href="@{css/buttonTop.css}" type="text/css"/>
+</head>
+<body>
+
+<div th:insert="navbar :: nav"></div>
+
+<div class="container">
+    <!--part of what is in charge of the card, use text- center, BUTTON response for registration  -->
+
+</div>
+
+<!--end of card part-->
+
+<!--using Carousel For Courses with controls, need to understand how to easily add more courses(without hardcodding)-->
+
+
+
+
+<h3 class="text-center">Знайти найдовший шлях між вершинами i та j</h3>
+<!--<p placeholder="id" id="n" th:text="${n}" class = "hidden"></p>-->
+<!--<p placeholder="id" id="d" th:text="${d}" class = "hidden"></p>-->
+<div class="container-fluid">
+<div class="row justify-content-center" >
+
+    <div class="col-md-4 col-md-offset-4"  align="center">
+
+        <form action="#" method="post"  th:action="@{find-path-from-i-to-j}"  >
+<!--            <label>Початкова вершина i</label>-->
+<!--            <input class="form-control col-md-2 col-md-offset-2" placeholder="i"  type="number" name = "i"/>-->
+
+            <div class="form-group">
+                <label for="i">Початкова вершина i</label>
+                <select id="i" class="form-control" name = "i" >
+                    <option th:each="v : ${vertices}"
+                            th:value="${v}"
+                            th:text="${v}">
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="j">Кінцева вершина j</label>
+                <select id="j" class="form-control" name = "j" >
+                    <option th:each="v : ${vertices}"
+                            th:value="${v}"
+                            th:text="${v}">
+                    </option>
+                </select>
+            </div>
+
+
+
+
+<!--            <label>Кінцева вершина j</label>-->
+<!--            <input class="form-control col-md-2 col-md-offset-2" placeholder="j"  type="number" name = "j"/>-->
+
+
+            <input class="btn btn-success col-md-3 col-md-offset-3" type="submit" value="Знайти"/>
+
+        </form>
+    </div>
+
+
+
+</div>
+    <label>Найдовший шлях (Пошук вглибину): </label>
+    <br>
+    <div th:if="${path1.length()>2}">
+        <span>Довжина: </span>  <span th:text="${size1}"></span><br>
+     <span>Шлях: </span>   <span  th:text="${path1}"></span>
+    </div>
+    <div th:if="${path1.length()==2}">
+        <p >Немає шляху</p>
+    </div>
+    <br>
+    <hr>
+
+
+    <label>Найдовший шлях (Алгоритм Флойда-Уоршелла): </label>
+    <br>
+    <div th:if="${path2.length()>2}">
+        <span>Довжина: </span>  <span th:text="${size2}"></span><br>
+        <span>Шлях: </span>   <span  th:text="${path2}"></span>
+    </div>
+    <div th:if="${path1.length()==2}">
+        <p >Немає шляху</p>
+    </div>
+
+    <div class="row justify-content-center" >
+
+        <div class="col-md-4 col-md-offset-4"  align="center">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <!--            <th scope="row">Id</th>-->
+            <th scope="row">Номер ящика</th>
+            <th scope="row">Розмірності</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="box, iter : ${boxes}">
+            <!--            <td th:text="${course.courseId}"></td>-->
+            <td th:text="${box.getNumber()}"></td>
+            <td th:text="${box.getDimensions().toString()}"></td>
+
+
+
+
+
+
+        </tr>
+        </tbody>
+    </table>
+
+        </div>
+    </div>
+<div align = "center"><span >Матриця суміжності: </span></div>
+    <table align="center">
+        <tr th:each="row: ${matrix}">
+            <td th:each="value: ${row}" th:text="${value} lt 0 ? '' : ${value}">
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Курсова робота</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="/../css/custom.css" th:href="@{css/custom.css}"/>
+    <link href="/../css/buttonTop.css" rel="stylesheet" th:href="@{css/buttonTop.css}" type="text/css"/>
+</head>
+<body>
+
+<div th:insert="navbar :: nav"></div>
+
+<div class="container">
+    <!--part of what is in charge of the card, use text- center, BUTTON response for registration  -->
+
+</div>
+
+<!--end of card part-->
+
+<!--using Carousel For Courses with controls, need to understand how to easily add more courses(without hardcodding)-->
+
+
+
+
+<h3 class="text-center">Знаходження найдовших шляхів між вершинами i та j</h3>
+<!--<p placeholder="id" id="n" th:text="${n}" class = "hidden"></p>-->
+<!--<p placeholder="id" id="d" th:text="${d}" class = "hidden"></p>-->
+<div class="container-fluid">
+    <div class="row justify-content-center" >
+
+
+        <div class="col-md-7 col-md-offset-7"  align="center">
+<!--            <label >Найдовший шлях між ящиками </label><label th:text=" ${i} "></label><label > та </label><label th:text=" ${j} "></label><label > (Пошук вглибину): </label>-->
+            <span >Найдовший шлях між ящиками </span><span th:text=" ${i} "></span><span > та </span><span th:text=" ${j} "></span><span > (Пошук вглибину): </span>
+
+            <br>
+            <div th:if="${pathIJ.length()>2}">
+                <p  th:text="${pathIJ}"></p>
+            </div>
+
+            <div th:if="${pathIJ.length()==2}">
+                <p >Немає шляху</p>
+            </div>
+            <br>
+            <hr>
+
+
+            <span >Найдовший шлях між ящиками  </span><span th:text=" ${i} "> </span><span > та </span><span th:text=" ${j} "> </span><span > (Алгоритм Флойда-Уоршелла): </span>
+
+            <br>
+            <div th:if="${pathIJ.length()>2}">
+                <p  th:text="${pathIJ}"></p>
+            </div>
+
+            <div th:if="${pathIJ.length()==2}">
+                <p >Немає шляху</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+
+</html>

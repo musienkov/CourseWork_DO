@@ -18,7 +18,7 @@ public class Graph {
     public List<Integer> getLongestPath() {
         return longestPath;
     }
-//  public Map<Integer, ArrayList<Integer>> longestPath = new HashMap<Integer, ArrayList<Integer>>();
+
 
 
 
@@ -130,10 +130,6 @@ public class Graph {
                         System.out.println(" i = "+i+", endPoint = "+endPoint);
                     }
 
-//                    if(i==endPoint && end){
-//                        fromItoJ.add(from);
-//                        System.out.println("мали добавити (1): "+from);
-//                   }
 
                     from = predecessor[from];
                 }
@@ -166,7 +162,7 @@ public class Graph {
             longestPath = tempList;
             count = longestPath.size();
         }
-       // System.out.println(longestPath.toString());
+
 
 
 

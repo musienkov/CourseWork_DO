@@ -25,7 +25,6 @@ public class FloydWarshallService {
         longestPathIJ.clear();
         maxDistance = 0;
         maxDistanceIJ = 0;
-       // int[][] negativeGraph = createNegativeWeights(graph);
         int dist[][] = new int[V][V];
 
         int i, j, k;

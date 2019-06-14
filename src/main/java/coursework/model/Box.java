@@ -45,14 +45,6 @@ public class Box {
     }
 
     public static void checkNesting(Graph graph, List<Box> boxes){
-//        for (int i = 1; i <boxes.size() ; i++) {
-//            for (int j = 1; j <boxes.size() ; j++) {
-//              if(checkDimensions(boxes.get(j-1),boxes.get(j))){
-//                  graph.addEdge(boxes.get(j-1).number,boxes.get(j).number,1);
-//              }
-//            }
-//        }
-
 
         for (Box box:boxes
         ) {
@@ -67,8 +59,7 @@ public class Box {
 
     public static boolean checkDimensions(Box box1, Box box2){
 
-//        System.out.println("d1: "+box1.getDimensions().toString());
-//        System.out.println("d2: "+box2.getDimensions().toString());
+
         boolean isNested = false;
         for (int i = 0; i < box1.getDimensions().size(); i++) {
             if (box1.getDimensions().get(i) < box2.getDimensions().get(i)){
@@ -78,7 +69,6 @@ public class Box {
                 return false;
         }
 
-         //System.out.println("__________is : "+isNested);
         return isNested;
     }
     public static void sortDimensions(List<Box> boxes){

@@ -72,8 +72,7 @@ public class PathController {
 
             List<Box> boxes = dataService.generateData(n, d);
             Box.sortDimensions(boxes);
-            //   boxService.sortDimensions(boxes);
-            //   boxService.checkNesting(g,boxes);
+
             Box.checkNesting(g, boxes);
             graphService.setGraph(g);
 
